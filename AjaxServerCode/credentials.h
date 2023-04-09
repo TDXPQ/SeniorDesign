@@ -165,6 +165,7 @@ const char CREDENTIAL_page[] PROGMEM = R"=====(
         xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           //console.log("Done Pressing Button");
+          confirm("WiFi Credentials Saved");
         }
         };
 
