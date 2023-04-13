@@ -277,10 +277,11 @@ void connectWifi(){
    // Try each of the WiFi credentials
   for (int j = 0; j < 3; j++) {
     WiFi.begin(credentials[j], credentials[j+1]); // Try the network name and password pair
-    delay(1000); // Provide a delay to see if the ESP32 connects to the the network
+    delay(2000); // Provide a delay to see if the ESP32 connects to the the network
+    WiFi.config(local_ip, gateway, subnet);
     if (WiFi.isConnected()) { // If the WiFi is connected do the following
       WiFi.softAPdisconnect(true); // Disable the ESP32 Access Point mode
-      //Serial.println("SoftAP disabled");
+      Serial.println("SoftAP disabled");
       break; // break to not try the other WiFi credentials
     }
   }
@@ -307,15 +308,16 @@ void setup(void){
   // If connection failed, switch to AP mode
   if (WiFi.status() != WL_CONNECTED) {
     webpage = "config"; // Change the webpage default to the config pagge
-    //Serial.println("Failed to connect to WiFi network!");
+    Serial.println("Failed to connect to WiFi network!");
     WiFi.disconnect(); // Disconnect WiFi
     WiFi.softAP("MyESP32AP", "MyAPPassword"); // Establish Access Point with ssid and password needed to connect
     WiFi.softAPConfig(local_ip, gateway, subnet); // Establish IP configuration
-    //Serial.println("Access point mode activated!");
-    //Serial.print("Connect to: ");
-    //Serial.println(WiFi.softAPIP());
+    Serial.println("Access point mode activated!");
+    Serial.print("Connect to: ");
+    Serial.println(WiFi.softAPIP());
   } else{
     //If connection successful show IP address in serial monitor
+    
     Serial.println("");
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());  //IP address assigned to your ESP
