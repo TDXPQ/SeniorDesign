@@ -10,6 +10,7 @@ void USART5_sendChar(char c);
 void USART5_sendString(char *str);
 char USART5_readChar(void);
 void executeCommand(char *command);
+void remoteInterface_Init(void);
 
 #include <stdio.h> // Needed libraries
 
@@ -49,6 +50,14 @@ void USART5_Init(){
 	
 	USART5.CTRLA |= USART_RXCIE_bm; //Enable hardware interrupt
 	sei ();	// Enable global interrupts
+}
+
+void remoteInterface_Init(){
+	/*
+	Set up PortG pins for the enable and relay
+	*/
+
+	USART5_Init(); // Call USART5_Init()
 }
 
 void USART5_sendChar(char c)
