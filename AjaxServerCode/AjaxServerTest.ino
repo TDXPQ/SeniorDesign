@@ -278,7 +278,7 @@ void connectWifi(){
   for (int j = 0; j < 3; j++) {
     WiFi.begin(credentials[j], credentials[j+1]); // Try the network name and password pair
     delay(2000); // Provide a delay to see if the ESP32 connects to the the network
-    WiFi.config(local_ip, gateway, subnet);
+    //WiFi.config(local_ip, gateway, subnet); Commented out untill we can set up a static IP with the router
     if (WiFi.isConnected()) { // If the WiFi is connected do the following
       WiFi.softAPdisconnect(true); // Disable the ESP32 Access Point mode
       Serial.println("SoftAP disabled");
