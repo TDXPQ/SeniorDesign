@@ -408,6 +408,15 @@ void tone (void)
 *
 *      * PF4 is the alternate pin position
 ***********************************************************************/
+
+////////////////////////////////////////
+////////////////////////////////////////
+////    ESP32 ISR Include Routines
+////  ----------------------------------
+# include <ESP32_ISR.h>
+# include <ESP32_ISR_Remote_InterfaceRoutines.inc>
+////
+////////////////////////////////////////
 void USARTs_Init (void)
 {
 	// Set TxD pins to OUTPUT
@@ -438,6 +447,8 @@ void USARTs_Init (void)
 	USART2.CTRLB |= USART_RXEN_bm;
 	USART3.CTRLB |= USART_TXEN_bm;
 	USART3.CTRLB |= USART_RXEN_bm;
+	
+	remoteInterface_Init();
 }
 
 
@@ -1755,15 +1766,6 @@ void load_a5V_voltage (void)
 	aux5_units = units;
 
 }
-		
-////////////////////////////////////////
-////////////////////////////////////////
-////    ESP32 ISR Include Routines
-////  ----------------------------------
-# include <ESP32_ISR.h>
-# include <ESP32_ISR_Remote_InterfaceRoutines.inc>
-////
-////////////////////////////////////////
 
 
 
@@ -1990,7 +1992,7 @@ uint8_t PORTE_image = 0;      // PortE image at the occurrence of intr
 	PORTE.DIRCLR = (PIN3_bm | PIN2_bm | PIN1_bm | PIN0_bm);  // INPUTS...
 	PORTE.PIN3CTRL |= PORT_PULLUPEN_bm;  // Seat PullUp: Msk=0x08 =Set bit3
 	PORTE.PIN2CTRL |= PORT_PULLUPEN_bm;  // Keyin PullUp: All Pull-Ups ON
-	PORTE.PIN1CTRL |= PORT_PULLUPEN_bm;  // Door Sw PullUp
+	//  5/12/23 PORTE.PIN1CTRL |= PORT_PULLUPEN_bm;  // Door Sw PullUp
 		
 	// PORTF DIR SET INIT CODE
 	// --------------------------------------------------------------------

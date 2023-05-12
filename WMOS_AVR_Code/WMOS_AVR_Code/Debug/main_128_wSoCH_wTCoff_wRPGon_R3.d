@@ -18,14 +18,14 @@ main_128_wSoCH_wTCoff_wRPGon_R3.d main_128_wSoCH_wTCoff_wRPGon_R3.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- ../Dependencies/OLED.h \
- ../Dependencies/OLED_InterfaceRoutines_AVR128_Release3.inc \
- ../Dependencies/ISR.h \
- ../Dependencies/ISR_Titles_SwitchCase_Quadrature_Release3.inc \
  ../Dependencies/ESP32_ISR.h \
  ../Dependencies/ESP32_ISR_Remote_InterfaceRoutines.inc \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h \
- c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h
+ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h \
+ ../Dependencies/OLED.h \
+ ../Dependencies/OLED_InterfaceRoutines_AVR128_Release3.inc \
+ ../Dependencies/ISR.h \
+ ../Dependencies/ISR_Titles_SwitchCase_Quadrature_Release3.inc
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -63,14 +63,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
 
-../Dependencies/OLED.h:
-
-../Dependencies/OLED_InterfaceRoutines_AVR128_Release3.inc:
-
-../Dependencies/ISR.h:
-
-../Dependencies/ISR_Titles_SwitchCase_Quadrature_Release3.inc:
-
 ../Dependencies/ESP32_ISR.h:
 
 ../Dependencies/ESP32_ISR_Remote_InterfaceRoutines.inc:
@@ -78,3 +70,11 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdio.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdarg.h:
+
+../Dependencies/OLED.h:
+
+../Dependencies/OLED_InterfaceRoutines_AVR128_Release3.inc:
+
+../Dependencies/ISR.h:
+
+../Dependencies/ISR_Titles_SwitchCase_Quadrature_Release3.inc:

@@ -56,6 +56,8 @@ void remoteInterface_Init(){
 	/*
 	Set up PortG pins for the enable and relay
 	*/
+	PORTG.DIRSET = (PIN2_bm | PIN3_bm | PIN4_bm); // Set Port G Pins 2,3,4 as output
+	PORTG.OUTSET = (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and high
 
 	USART5_Init(); // Call USART5_Init()
 }
