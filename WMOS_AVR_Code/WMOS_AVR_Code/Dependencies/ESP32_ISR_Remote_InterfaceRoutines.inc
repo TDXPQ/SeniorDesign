@@ -1,4 +1,4 @@
-// Globabl Variables for Wireless Remote
+ // Globabl Variables for Wireless Remote
 // Ask Scott where to put these
 char command[50];
 uint8_t cmd_index = 0;
@@ -116,7 +116,14 @@ void executeCommand(char *command)
 	}
 	else if (strcmp(command, "d") == 0)
 	{
-		USART5_sendString((char*)pack_kwh_array);
+		char charArray[17];
+
+		for(size_t i=0; i < 16; i++){
+			charArray[i] = (char)pack_kwh_array[i];
+		}
+		charArray[16] = '\0';
+
+		USART5_sendString((char*)charArray);
 		USART5_sendChar('\n');
 		
 	}
@@ -151,10 +158,67 @@ void executeCommand(char *command)
 	{
 		memset(temp, 0, sizeof(temp)); // Reset the temp variable to send information
 		
-		sprintf(temp, "%u%u.%u%u", accy133_tens, accy133_units, accy133_tenths, accy133_hundredths);
+		sprintf(temp, "%hu", scaled_temps_array[5]);
 		USART5_sendString((char*)temp);
 		USART5_sendChar('\n');
 		
+	}
+	else if (strcmp(command, "i") == 0)
+	{
+
+		memset(temp, 0, sizeof(temp)); // Reset the temp variable to send information
+		
+		sprintf(temp, "%hu", scaled_temps_array[4]);
+		USART5_sendString((char*)temp);
+		USART5_sendChar('\n');
+		
+	}
+	else if (strcmp(command, "j") == 0)
+	{
+
+		memset(temp, 0, sizeof(temp)); // Reset the temp variable to send information
+		
+		sprintf(temp, "%hu", scaled_temps_array[3]);
+		USART5_sendString((char*)temp);
+		USART5_sendChar('\n');
+		
+	}
+	else if (strcmp(command, "k") == 0)
+	{
+
+		memset(temp, 0, sizeof(temp)); // Reset the temp variable to send information
+		
+		sprintf(temp, "%hu", scaled_temps_array[2]);
+		USART5_sendString((char*)temp);
+		USART5_sendChar('\n');
+		
+	}
+	else if (strcmp(command, "l") == 0)
+	{
+
+		memset(temp, 0, sizeof(temp)); // Reset the temp variable to send information
+		
+		sprintf(temp, "%hu", scaled_temps_array[1]);
+		USART5_sendString((char*)temp);
+		USART5_sendChar('\n');
+		
+	}
+	else if (strcmp(command, "m") == 0)
+	{
+
+		memset(temp, 0, sizeof(temp)); // Reset the temp variable to send information
+		
+		sprintf(temp, "%hu", scaled_temps_array[0]);
+		USART5_sendString((char*)temp);
+		USART5_sendChar('\n');
+		
+	}
+	else if (strcmp(command, "z") == 0)
+	{
+		
+		PORTG.OUTCLR = (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and high
+		_delay_ms(30);
+		PORTG.OUTSET = (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and high
 	}
 	//default case is to send out instructions on RX pin, no change to LED
 	else
