@@ -30,7 +30,7 @@ const char MAIN_page[] PROGMEM = R"=====(
       align-items: center;
       color: blue;
       margin-top: 10px;
-      font-size: 90px;
+      font-size: 50px;
       text-align: center;
     }
     /* Thin gray line */
@@ -64,7 +64,7 @@ const char MAIN_page[] PROGMEM = R"=====(
       align-items: center;
       color: blue;
       margin-top: 10px;
-      font-size: 90px;
+      font-size: 50px;
       text-align: center;
     }
   </style>
@@ -72,28 +72,28 @@ const char MAIN_page[] PROGMEM = R"=====(
 <body>
   <button id="banner" onclick="getConfigPage()">EVIM Remote</button>
   <div id="list-1">
-    <div id="divPackVoltageValue">Pack Voltage: <span id="packVoltageValue">60WH-4.123kWH kWh</span></div>
-    <div id="divPackCurrentValue">Pack Current: <span id="packCurrentValue">60WH-4.123kWH kWh</span></div>
-    <div id="divPackSOCValue">Pack SoC: <span id="packSOCValue">60WH-4.123kWH kWh</span</div>
-    <div id="divPackPowerValue">Pack Power: <span id="packPowerValue">60WH-4.123kWH kWh</span></div>
+    <div id="divPackVoltageValue">Pack Voltage: <span id="packVoltageValue">DEFAULT</span></div>
+    <div id="divPackCurrentValue">Pack Current: <span id="packCurrentValue">DEFAULT</span></div>
+    <div id="divPackSOCValue">Pack SoC: <span id="packSOCValue">DEFAULT</span</div>
+    <div id="divPackPowerValue">Pack Power: <span id="packPowerValue">DEFAULT</span></div>
   </div>
   <div id="line-1"></div>
   <div id="list-2">
-    <div id="divVoltageValue1" style="margin-right: 40px;"><span id="voltageValue1">5.1</span> V</div>
-    <div id="divVoltageValue2" style="margin-right: 40px;"><span id="voltageValue2">12.3</span> V</div>
-    <div id="divVoltageValue3"><span id="voltageValue3">13.48</span> V</div>
+    <div id="divVoltageValue1" style="margin-right: 40px;"><span id="voltageValue1">DEFAULT</span> V</div>
+    <div id="divVoltageValue2" style="margin-right: 40px;"><span id="voltageValue2">DEFAULT</span> V</div>
+    <div id="divVoltageValue3"><span id="voltageValue3">DEFAULT</span> V</div>
   </div>
   <div id="line-1"></div>
   <div id="list-3">
-    <div id="divMotorValue">Motor: <span id="motorValue">89.4</span> &#8457</div>
-    <div id="divControllerValue">Controller: <span id="controllerValue">89.4</span> &#8457</div>
-    <div id="divDCDCValue">DC-DC: <span id="dcdcValue">89.4</span> &#8457</div>
+    <div id="divMotorValue">Motor: <span id="motorValue">DEFAULT</span> &#8457</div>
+    <div id="divControllerValue">Controller: <span id="controllerValue">DEFAULT</span> &#8457</div>
+    <div id="divDCDCValue">DC-DC: <span id="dcdcValue">DEFAULT</span> &#8457</div>
     </div>
   <div id="line-1"></div>
    <div id="list-3"> 
-    <div id="divBBoxValue1">BBox 1: <span id="bboxValue1">Test</span> </div>
-    <div id="divBBoxValue2">BBox 2: <span id="bboxValue2">Test</span> </div>
-    <div id="divAmbientValue">Ambient: <span id="ambientValue">Test</span> </div>
+    <div id="divBBoxValue1">BBox 1: <span id="bboxValue1">DEFAULT</span> </div>
+    <div id="divBBoxValue2">BBox 2: <span id="bboxValue2">DEFAULT</span> </div>
+    <div id="divAmbientValue">Ambient: <span id="ambientValue">DEFAULT</span> </div>
     </div>
 
     <script>
@@ -103,10 +103,10 @@ const char MAIN_page[] PROGMEM = R"=====(
         getPackVoltage();
         getPackCurrent();
         getPackSOC();
-        getPackPower();
+        //getPackPower();
         getVoltage1();
         getVoltage2();
-        getVoltage2();
+        getVoltage3();
         getMotorValue();
         getControllerValue();
         getDCDCValue();
@@ -120,7 +120,7 @@ const char MAIN_page[] PROGMEM = R"=====(
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("packVoltageValue").innerHTML =
-            this.responseText;
+            this.responseText.slice(5);
           }
         };
         xhttp.open("GET", "readPackVoltage", true);
@@ -131,7 +131,7 @@ const char MAIN_page[] PROGMEM = R"=====(
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("packCurrentValue").innerHTML =
-            this.responseText;
+            this.responseText.slice(5);
           }
         };
         xhttp.open("GET", "readPackCurrent", true);
@@ -142,7 +142,7 @@ const char MAIN_page[] PROGMEM = R"=====(
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("packSOCValue").innerHTML =
-            this.responseText;
+            this.responseText.slice(5);
           }
         };
         xhttp.open("GET", "readSOCValue", true);
@@ -153,7 +153,7 @@ const char MAIN_page[] PROGMEM = R"=====(
         xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("packPowerValue").innerHTML =
-            this.responseText;
+            this.responseText.slice(5);
           }
         };
         xhttp.open("GET", "readPowerValue", true);

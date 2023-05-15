@@ -73,7 +73,7 @@ const char CONFIG_page[] PROGMEM = R"=====(
   <div id="list-1">
     <button id="button-2" onclick="getWifiCredPage()">Modify Wi-Fi Access Points Credentials</button>
     <button id="button-2" onclick="getWifiReconnect()">Network Reconnect</button>
-    <button id="button-2" onclick="getRestartServer()">Restart Server</button>
+    <button id="button-2" onclick="getRestartServer()">Cycle Relay</button>
   </div>
   <div id="line-2"></div>
   <div id="list-3">
@@ -93,7 +93,7 @@ const char CONFIG_page[] PROGMEM = R"=====(
         getDNSValue();
         getNetMaskValue();
         getMACValue();
-      }, 2000); //2000mSeconds update rate
+      }, 500); //2000mSeconds update rate
       
       function getIpAddress() {
         var xhttp = new XMLHttpRequest();

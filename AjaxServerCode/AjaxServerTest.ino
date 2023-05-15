@@ -72,7 +72,7 @@ void handleWifiCredPage(){
  
 // ===Functions to request information and actions from the AVR128===
 void handlePackVoltage() {
-  memset(buffer,'\0',16); // Reset the global buffer variable
+  memset(buffer,'\0',20); // Reset the global buffer variable
   SerialPort.print("a\r\n"); // Send serial usart command to request information
   SerialPort.readBytesUntil('\n', buffer, 16); // Wait for the information to return from the AVR128
   String pack_voltage_array = String(buffer); // Store the buffer information to a variable
@@ -101,9 +101,11 @@ void handlePackSOC() {
 }
 
 void handlePackPower() {
-  memset(buffer,'\0',16);
+  memset(buffer,'\0', 16);
   SerialPort.print("d\r\n");
   SerialPort.readBytesUntil('\n', buffer, 16);
+  buffer[16] = '\0';
+
   String pack_power_array = String(buffer);
  
  server.send(200, "text/plane", pack_power_array); 
@@ -140,7 +142,9 @@ void handleMotorValue() {
   memset(buffer,'\0',16);
   SerialPort.print("h\r\n");
   SerialPort.readBytesUntil('\n', buffer, 16);
-  String motorValue = String(buffer);
+  float floatMotorValue = atof(buffer);
+  floatMotorValue = floatMotorValue / 10;
+  String motorValue = String(floatMotorValue);
  
  server.send(200, "text/plane", motorValue);
 }
@@ -149,7 +153,9 @@ void handleControllerValue() {
   memset(buffer,'\0',16);
   SerialPort.print("i\r\n");
   SerialPort.readBytesUntil('\n', buffer, 16);
-  String controllerValue = String(buffer);
+  float floatControllerValue = atof(buffer);
+  floatControllerValue = floatControllerValue / 10;
+  String controllerValue = String(floatControllerValue);
  
  server.send(200, "text/plane", controllerValue);
 }
@@ -158,7 +164,9 @@ void handleDCDCValue() {
   memset(buffer,'\0',16);
   SerialPort.print("j\r\n");
   SerialPort.readBytesUntil('\n', buffer, 16);
-  String dcdcValue = String(buffer);
+  float floatDCDCValue = atof(buffer);
+  floatDCDCValue = floatDCDCValue / 10;
+  String dcdcValue = String(floatDCDCValue);
  
  server.send(200, "text/plane", dcdcValue);
 }
@@ -167,7 +175,9 @@ void handleBBoxValue1() {
   memset(buffer,'\0',16);
   SerialPort.print("k\r\n");
   SerialPort.readBytesUntil('\n', buffer, 16);
-  String bboxValue1 = String(buffer);
+  float floatBBoxValue1 = atof(buffer);
+  floatBBoxValue1 = floatBBoxValue1 / 10;
+  String bboxValue1 = String(floatBBoxValue1);
  
  server.send(200, "text/plane", bboxValue1);
 }
@@ -176,7 +186,9 @@ void handleBBoxValue2() {
   memset(buffer,'\0',16);
   SerialPort.print("l\r\n");
   SerialPort.readBytesUntil('\n', buffer, 16);
-  String bboxValue2 = String(buffer);
+  float floatBBoxValue2 = atof(buffer);
+  floatBBoxValue2 = floatBBoxValue2 / 10;
+  String bboxValue2 = String(floatBBoxValue2);
  
  server.send(200, "text/plane", bboxValue2);
 }
@@ -185,13 +197,15 @@ void handleAmbientValue() {
   memset(buffer,'\0',16);
   SerialPort.print("m\r\n");
   SerialPort.readBytesUntil('\n', buffer, 16);
-  String ambientValue = String(buffer);
+  float floatAmbientValue = atof(buffer);
+  floatAmbientValue = floatAmbientValue / 10;
+  String ambientValue = String(floatAmbientValue);
  
  server.send(200, "text/plane", ambientValue);
 }
 
 void handleRestartServer() {
-  SerialPort.print("RESTART\r\n");
+  SerialPort.print("z\r\n");
 }
 
 // ===Functions to request information from the ESP32===
@@ -296,7 +310,7 @@ void setup(void){
   EEPROM.begin(250); // Establish the needed EEPROM size
 
   Serial.begin(115200); // Define the serial BAUD Rate
-  SerialPort.begin(115200, SERIAL_8N1, 40, 38);  // Establish the BAUD Rate, Standard, and GPIO pins
+  SerialPort.begin(115200, SERIAL_8N1, 39, 40);  // Establish the BAUD Rate, Standard, and GPIO pins
   Serial.println();
   Serial.println("Booting Sketch...");
 
