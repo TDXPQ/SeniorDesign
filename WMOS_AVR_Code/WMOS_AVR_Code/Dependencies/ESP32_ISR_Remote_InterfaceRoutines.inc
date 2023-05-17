@@ -1,18 +1,23 @@
+
+#include <stdio.h> // Needed libraries
+
  // Globabl Variables for Wireless Remote
-// Ask Scott where to put these
 char command[50];
 uint8_t cmd_index = 0;
 char c;
 
 // Wireless Remote function headers
 void USART5_Init(void);
+void remoteInterface_Init(void);
 void USART5_sendChar(char c);
 void USART5_sendString(char *str);
 char USART5_readChar(void);
 void executeCommand(char *command);
 void remoteInterface_Init(void);
-
-#include <stdio.h> // Needed libraries
+void esp32_enable_relay(void);
+void esp32_disable_relay(void);
+void esp32_enable_threshold(void);
+void esp32_disable_threshold(void);
 
 
 ISR ( USART5_RXC_vect ){ //Interrupt the program when there is a new USART command
@@ -52,12 +57,12 @@ void USART5_Init(){
 	sei ();	// Enable global interrupts
 }
 
-void remoteInterface_Init(){
+void remoteInterface_Init(void){
 	/*
 	Set up PortG pins for the enable and relay
 	*/
 	PORTG.DIRSET = (PIN2_bm | PIN3_bm | PIN4_bm); // Set Port G Pins 2,3,4 as output
-	PORTG.OUTSET = (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and high
+	esp32_enable_relay();
 
 	USART5_Init(); // Call USART5_Init()
 }
@@ -80,6 +85,22 @@ void USART5_sendString(char *str)
 	{
 		USART5_sendChar(str[i]);
 	}
+}
+
+void esp32_enable_relay(void){
+	PORTG.OUTSET |= (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and high
+}
+
+void esp32_disable_relay(void){
+	PORTG.OUTCLR |= (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and low
+}
+
+void esp32_enable_threshold(void){
+	PORTG.OUTCLR |= (PIN3_bm); // Threshold is enabled low
+}
+
+void esp32_disable_threshold(void){
+	PORTG.OUTSET |= (PIN3_bm); //Threshold is disabled high
 }
 
 char USART5_readChar(void)
@@ -216,9 +237,9 @@ void executeCommand(char *command)
 	else if (strcmp(command, "z") == 0)
 	{
 		
-		PORTG.OUTCLR = (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and high
+		
 		_delay_ms(30);
-		PORTG.OUTSET = (PIN2_bm | PIN4_bm); // Set Port G Pin 2 and 4 and high
+		
 	}
 	//default case is to send out instructions on RX pin, no change to LED
 	else
