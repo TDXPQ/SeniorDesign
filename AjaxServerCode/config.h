@@ -93,7 +93,7 @@ const char CONFIG_page[] PROGMEM = R"=====(
         getDNSValue();
         getNetMaskValue();
         getMACValue();
-      }, 1000); //2000mSeconds update rate
+      }, 500); //2000mSeconds update rate
       
       function getIpAddress() {
         var xhttp = new XMLHttpRequest();

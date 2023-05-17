@@ -114,7 +114,7 @@ const char MAIN_page[] PROGMEM = R"=====(
         getBBoxValue2();
         getAmbientValue();
         getThresholdValue();
-      }, 2000); //1000mSeconds update rate
+      }, 500); //1000mSeconds update rate
       
       var thresholdSet = "";
       const THRESHOLD_VALUE = 178;

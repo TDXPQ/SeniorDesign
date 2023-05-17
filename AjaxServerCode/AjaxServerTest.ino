@@ -20,7 +20,7 @@
 //===Global Variables=== 
 
 // Pin connected to the AVR GPIO that signles threshold
-const int inputThresholdPin = 2; //Change when Aaron gets here
+const int inputThresholdPin = 1; //Change when Aaron gets here
 
 // Set up ports and AJAX server
 HardwareSerial SerialPort(1);
@@ -212,10 +212,14 @@ void handleAmbientValue() {
 
 void handleThreshold() {
 
-  //int state = digitalRead(inputThresholdPin); // Read state of input threshold signifying pin
-  String state = "LOW";
+  bool state = digitalRead(inputThresholdPin); // Read state of input threshold signifying pin
+
+  if (!state){
+    server.send(200, "text/plane", "LOW");
+  }else{
+    server.send(200, "text/plane", "HIGH");
+  }
  
-  server.send(200, "text/plane", String(state));
 }
 
 
