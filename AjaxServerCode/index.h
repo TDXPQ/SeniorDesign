@@ -21,7 +21,7 @@ const char MAIN_page[] PROGMEM = R"=====(
       justify-content: center;
       align-items: center;
       text-align: center;
-      font-size: 50px;
+      font-size: 60px;
     }
     /* Horizontal list of values */
     #list-2 {
@@ -30,7 +30,7 @@ const char MAIN_page[] PROGMEM = R"=====(
       align-items: center;
       color: blue;
       margin-top: 10px;
-      font-size: 50px;
+      font-size: 60px;
       text-align: center;
     }
     /* Thin gray line */
@@ -64,7 +64,7 @@ const char MAIN_page[] PROGMEM = R"=====(
       align-items: center;
       color: blue;
       margin-top: 10px;
-      font-size: 50px;
+      font-size: 60px;
       text-align: center;
     }
   </style>
@@ -79,7 +79,7 @@ const char MAIN_page[] PROGMEM = R"=====(
   </div>
   <div id="line-1"></div>
   <div id="list-2">
-    <div id="divVoltageValue1" style="margin-right: 40px;"><span id="voltageValue1">DEFAULT</span> V</div>
+    <div id="divVoltageValue1" style="margin-right: 40px;"><span id="voltageValue1">190V</span> V</div>
     <div id="divVoltageValue2" style="margin-right: 40px;"><span id="voltageValue2">DEFAULT</span> V</div>
     <div id="divVoltageValue3"><span id="voltageValue3">DEFAULT</span> V</div>
   </div>
@@ -113,8 +113,47 @@ const char MAIN_page[] PROGMEM = R"=====(
         getBBoxValue1();
         getBBoxValue2();
         getAmbientValue();
-      }, 2000); //2000mSeconds update rate
+        getThresholdValue();
+      }, 2000); //1000mSeconds update rate
       
+      var thresholdSet = "";
+      const THRESHOLD_VALUE = 178;
+
+      function getThresholdValue() {
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            thresholdSet = this.responseText;
+            // Segement of code for threshold indication (i.e. beeping and color change)
+            //console.log(thresholdSet.localeCompare("LOW") == 0);
+            //console.log(parseInt((document.getElementById("packVoltageValue").innerHTML.slice(0,-1))) >= THRESHOLD_VALUE);
+            if ((thresholdSet.localeCompare("LOW")) == 0){
+              if(parseInt((document.getElementById("packVoltageValue").innerHTML.slice(0,-1))) >= THRESHOLD_VALUE){
+                document.getElementById("packVoltageValue").style.color = "red";
+                document.getElementById("divPackVoltageValue").style.color = "red";
+                // PUT AUDIO ALERT HERE
+                // PUT AUDIO ALERT HERE
+                // PUT AUDIO ALERT HERE
+                // PUT AUDIO ALERT HERE   
+
+
+
+              } else {
+                document.getElementById("packVoltageValue").style.color = "blue";
+                document.getElementById("divPackVoltageValue").style.color = "blue";
+              }
+            } else {
+              document.getElementById("packVoltageValue").style.color = "blue";
+              document.getElementById("divPackVoltageValue").style.color = "blue";
+            }
+
+          }
+        };
+        xhttp.open("GET", "readThreshold", true);
+        xhttp.send();
+      }
+
       function getPackVoltage() {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {

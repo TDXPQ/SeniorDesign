@@ -19,12 +19,17 @@
 
 //===Global Variables=== 
 
+// Pin connected to the AVR GPIO that signles threshold
+const int inputThresholdPin = 2; //Change when Aaron gets here
+
 // Set up ports and AJAX server
 HardwareSerial SerialPort(1);
 WebServer server(80);
 
-IPAddress local_ip(192, 168, 1, 1); // The desired IP address for the access point
-IPAddress gateway(192, 168, 1, 1); // The IP address of the gateway (the access point itself)
+//  Defualt IP Code Setting
+//************************************************************
+IPAddress local_ip(192, 168, 0, 80); // The desired IP address for the access point
+IPAddress gateway(192, 168, 0, 80); // The IP address of the gateway (the access point itself)
 IPAddress subnet(255, 255, 255, 0); // The subnet mask for the network
 
 // Global Strings
@@ -204,6 +209,16 @@ void handleAmbientValue() {
  server.send(200, "text/plane", ambientValue);
 }
 
+
+void handleThreshold() {
+
+  //int state = digitalRead(inputThresholdPin); // Read state of input threshold signifying pin
+  String state = "LOW";
+ 
+  server.send(200, "text/plane", String(state));
+}
+
+
 void handleRestartServer() {
   SerialPort.print("z\r\n");
 }
@@ -291,8 +306,12 @@ void connectWifi(){
    // Try each of the WiFi credentials
   for (int j = 0; j < 3; j++) {
     WiFi.begin(credentials[j], credentials[j+1]); // Try the network name and password pair
-    delay(2000); // Provide a delay to see if the ESP32 connects to the the network
-    //WiFi.config(local_ip, gateway, subnet); Commented out untill we can set up a static IP with the router
+    delay(2000); // Provide a delay to see if the ESP32 connects to the the 
+    
+    // ASSIGNS STATIC IP TO ESP32 WHEN IT CONNECTS TO WIFI
+    //WiFi.config(local_ip, gateway, subnet); Commented out until we can set up a static IP with the router
+    
+    
     if (WiFi.isConnected()) { // If the WiFi is connected do the following
       WiFi.softAPdisconnect(true); // Disable the ESP32 Access Point mode
       Serial.println("SoftAP disabled");
@@ -308,6 +327,8 @@ void connectWifi(){
 
 void setup(void){
   EEPROM.begin(250); // Establish the needed EEPROM size
+
+  pinMode(inputThresholdPin, INPUT); // Set GPIO pin that connects to AVR PORTG Pin 3 that signifies threshold to input
 
   Serial.begin(115200); // Define the serial BAUD Rate
   SerialPort.begin(115200, SERIAL_8N1, 39, 40);  // Establish the BAUD Rate, Standard, and GPIO pins
@@ -374,6 +395,7 @@ void setup(void){
 
   server.on("/saveWifiCreds", handleSaveCreds);
   server.on("/readNetworkCreds", handleLoadCreds);
+  server.on("/readThreshold", handleThreshold);
 
   server.on("/readWifiReconnect", connectWifi);
  

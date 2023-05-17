@@ -116,7 +116,7 @@ const char CREDENTIAL_page[] PROGMEM = R"=====(
 
       setInterval(function() {
 
-      }, 2000); //2000mSeconds update rate
+      }, 1000); //2000mSeconds update rate
 
       function getConfigPage() {
         var xhttp = new XMLHttpRequest();
