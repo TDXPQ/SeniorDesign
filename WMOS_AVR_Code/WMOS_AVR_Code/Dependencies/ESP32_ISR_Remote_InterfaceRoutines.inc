@@ -179,7 +179,7 @@ void executeCommand(char *command)
 	{
 		memset(temp, 0, sizeof(temp)); // Reset the temp variable to send information
 		
-		sprintf(temp, "%hu", scaled_temps_array[5]);
+		sprintf(temp, "%hu", scaled_temps_array[5]); //Convert value to string to transmit
 		USART5_sendString((char*)temp);
 		USART5_sendChar('\n');
 		
@@ -236,9 +236,9 @@ void executeCommand(char *command)
 	}
 	else if (strcmp(command, "z") == 0)
 	{
-		
-		
-		_delay_ms(30);
+		esp32_disable_relay(); // Disable power the the relay and ESP
+		_delay_ms(30); //Delay
+		esp32_enable_relay(); // Enable power to the relay and ESP
 		
 	}
 	//default case is to send out instructions on RX pin, no change to LED

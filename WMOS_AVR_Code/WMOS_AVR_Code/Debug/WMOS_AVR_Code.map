@@ -134,8 +134,6 @@ Discarded input sections
                 0x00000000        0x1 main_128_wSoCH_wTCoff_wRPGon_R3.o
  .bss.pack_soc95_flag
                 0x00000000        0x1 main_128_wSoCH_wTCoff_wRPGon_R3.o
- .text.esp32_disable_relay
-                0x00000000       0x22 main_128_wSoCH_wTCoff_wRPGon_R3.o
  .text.esp32_enable_threshold
                 0x00000000       0x22 main_128_wSoCH_wTCoff_wRPGon_R3.o
  .text.esp32_disable_threshold
@@ -593,7 +591,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0xd3f0
+.text           0x00000000     0xd41a
  *(.vectors)
  .vectors       0x00000000      0x104 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/AVR-Dx_DFP/1.10.114/gcc/dev/avr128db64/avrxmega4/crtavr128db64.o
                 0x00000000                __vector_default
@@ -734,343 +732,346 @@ END GROUP
  .text.esp32_enable_relay
                 0x00000540       0x22 main_128_wSoCH_wTCoff_wRPGon_R3.o
                 0x00000540                esp32_enable_relay
+ .text.esp32_disable_relay
+                0x00000562       0x22 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000562                esp32_disable_relay
  .text.USART5_readChar
-                0x00000562       0x24 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000562                USART5_readChar
+                0x00000584       0x24 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000584                USART5_readChar
  .text.executeCommand
-                0x00000586      0x65e main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000586                executeCommand
+                0x000005a8      0x666 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000005a8                executeCommand
  .text.USARTs_Init
-                0x00000be4      0x116 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000be4                USARTs_Init
+                0x00000c0e      0x116 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000c0e                USARTs_Init
  .text.TxD_OLED1_USART0
-                0x00000cfa       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000cfa                TxD_OLED1_USART0
+                0x00000d24       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000d24                TxD_OLED1_USART0
  .text.TxD_OLED2_USART3
-                0x00000d30       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000d30                TxD_OLED2_USART3
+                0x00000d5a       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000d5a                TxD_OLED2_USART3
  .text.TxD_OLED3_USART1
-                0x00000d66       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000d66                TxD_OLED3_USART1
+                0x00000d90       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000d90                TxD_OLED3_USART1
  .text.oled_init
-                0x00000d9c      0x222 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000d9c                oled_init
+                0x00000dc6      0x222 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000dc6                oled_init
  .text.putcharOLED1
-                0x00000fbe       0x84 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00000fbe                putcharOLED1
+                0x00000fe8       0x84 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00000fe8                putcharOLED1
  .text.putcharOLED2
-                0x00001042       0x84 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001042                putcharOLED2
+                0x0000106c       0x84 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000106c                putcharOLED2
  .text.putcharOLED3
-                0x000010c6       0x84 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000010c6                putcharOLED3
+                0x000010f0       0x84 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000010f0                putcharOLED3
  .text.oled_contrast_set_cc
-                0x0000114a      0x14a main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000114a                oled_contrast_set_cc
+                0x00001174      0x14a main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001174                oled_contrast_set_cc
  .text.oled2_contrast_set
-                0x00001294       0x7e main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001294                oled2_contrast_set
+                0x000012be       0x7e main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000012be                oled2_contrast_set
  .text.oled1_send_command
-                0x00001312       0xd0 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001312                oled1_send_command
+                0x0000133c       0xd0 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000133c                oled1_send_command
  .text.oled2_send_command
-                0x000013e2       0xd4 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000013e2                oled2_send_command
+                0x0000140c       0xd4 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000140c                oled2_send_command
  .text.oled3_send_command
-                0x000014b6       0xd0 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000014b6                oled3_send_command
+                0x000014e0       0xd0 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000014e0                oled3_send_command
  .text.oled1_putstring
-                0x00001586       0xb6 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001586                oled1_putstring
+                0x000015b0       0xb6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000015b0                oled1_putstring
  .text.oled2_putstring
-                0x0000163c       0xb6 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000163c                oled2_putstring
+                0x00001666       0xb6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001666                oled2_putstring
  .text.oled3_putstring
-                0x000016f2       0xb6 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000016f2                oled3_putstring
+                0x0000171c       0xb6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000171c                oled3_putstring
  .text.oled1_setxt_position
-                0x000017a8       0xca main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000017a8                oled1_setxt_position
+                0x000017d2       0xca main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000017d2                oled1_setxt_position
  .text.oled2_setxt_position
-                0x00001872       0xca main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001872                oled2_setxt_position
+                0x0000189c       0xca main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000189c                oled2_setxt_position
  .text.oled3_setxt_position
-                0x0000193c       0xca main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000193c                oled3_setxt_position
+                0x00001966       0xca main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001966                oled3_setxt_position
  .text.ssc_oled_lines
-                0x00001a06       0xa0 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001a06                ssc_oled_lines
+                0x00001a30       0xa0 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001a30                ssc_oled_lines
  .text.clr_text_area2_short
-                0x00001aa6       0x3c main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001aa6                clr_text_area2_short
+                0x00001ad0       0x3c main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001ad0                clr_text_area2_short
  .text.USART2_RcvChr
-                0x00001ae2       0x24 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001ae2                USART2_RcvChr
+                0x00001b0c       0x24 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001b0c                USART2_RcvChr
  .text.USART2_SndChr
-                0x00001b06       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001b06                USART2_SndChr
+                0x00001b30       0x36 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001b30                USART2_SndChr
  .text.SOC_UART2_SndCmd
-                0x00001b3c       0x68 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001b3c                SOC_UART2_SndCmd
+                0x00001b66       0x68 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001b66                SOC_UART2_SndCmd
  .text.Get_SOC_Response
-                0x00001ba4       0x9e main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001ba4                Get_SOC_Response
+                0x00001bce       0x9e main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001bce                Get_SOC_Response
  .text.verify_SOCH_online
-                0x00001c42      0x28c main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001c42                verify_SOCH_online
+                0x00001c6c      0x28c main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001c6c                verify_SOCH_online
  .text.display_pack_voltage
-                0x00001ece      0x11a main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001ece                display_pack_voltage
+                0x00001ef8      0x11a main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00001ef8                display_pack_voltage
  .text.display_pack_current
-                0x00001fe8      0x1b6 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00001fe8                display_pack_current
+                0x00002012      0x1b6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00002012                display_pack_current
  .text.display_pack_soc
-                0x0000219e       0xd8 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000219e                display_pack_soc
+                0x000021c8       0xd8 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000021c8                display_pack_soc
  .text.display_pack_kwh
-                0x00002276       0xce main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002276                display_pack_kwh
+                0x000022a0       0xce main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000022a0                display_pack_kwh
  .text.soc_state_screen_load
-                0x00002344       0x48 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002344                soc_state_screen_load
+                0x0000236e       0x48 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000236e                soc_state_screen_load
  .text.entering_evim_state_screen_loads
-                0x0000238c       0xf8 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000238c                entering_evim_state_screen_loads
+                0x000023b6       0xf8 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000023b6                entering_evim_state_screen_loads
  .text.reload_big_wait_mid_oled
-                0x00002484       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002484                reload_big_wait_mid_oled
+                0x000024ae       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000024ae                reload_big_wait_mid_oled
  .text.motor_tasks
-                0x000024b8       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000024b8                motor_tasks
+                0x000024e2       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000024e2                motor_tasks
  .text.controller_tasks
-                0x000024ec       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000024ec                controller_tasks
+                0x00002516       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00002516                controller_tasks
  .text.dcdc_tasks
-                0x00002520       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002520                dcdc_tasks
+                0x0000254a       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000254a                dcdc_tasks
  .text.bbox1_tasks
-                0x00002554       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002554                bbox1_tasks
+                0x0000257e       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000257e                bbox1_tasks
  .text.bbox2_tasks
-                0x00002588       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002588                bbox2_tasks
+                0x000025b2       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000025b2                bbox2_tasks
  .text.ambient_tasks
-                0x000025bc       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000025bc                ambient_tasks
+                0x000025e6       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000025e6                ambient_tasks
  .text.battery_tasks
-                0x000025f0       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000025f0                battery_tasks
+                0x0000261a       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000261a                battery_tasks
  .text.temp_high_tasks
-                0x00002624       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002624                temp_high_tasks
+                0x0000264e       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000264e                temp_high_tasks
  .text.temp_low_tasks
-                0x00002658       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00002658                temp_low_tasks
+                0x00002682       0x34 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00002682                temp_low_tasks
  .text.lock_accel_pedal_slo
-                0x0000268c     0x1b86 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000268c                lock_accel_pedal_slo
+                0x000026b6     0x1b86 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000026b6                lock_accel_pedal_slo
  .text.unlock_accel_pedal_slo
-                0x00004212     0x1b92 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00004212                unlock_accel_pedal_slo
+                0x0000423c     0x1b92 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000423c                unlock_accel_pedal_slo
  .text.pedal_lock_pwr_on
-                0x00005da4       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005da4                pedal_lock_pwr_on
+                0x00005dce       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005dce                pedal_lock_pwr_on
  .text.pedal_lock_pwr_off
-                0x00005dbe       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005dbe                pedal_lock_pwr_off
+                0x00005de8       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005de8                pedal_lock_pwr_off
  .text.soch_pwr_off
-                0x00005dd8       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005dd8                soch_pwr_off
+                0x00005e02       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005e02                soch_pwr_off
  .text.soch_pwr_on
-                0x00005df2       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005df2                soch_pwr_on
+                0x00005e1c       0x1a main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005e1c                soch_pwr_on
  .text.TCA0_init
-                0x00005e0c       0x54 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005e0c                TCA0_init
+                0x00005e36       0x54 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005e36                TCA0_init
  .text.TCA0_stop
-                0x00005e60       0x24 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005e60                TCA0_stop
+                0x00005e8a       0x24 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005e8a                TCA0_stop
  .text.__vector_9
-                0x00005e84       0x8c main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005e84                __vector_9
+                0x00005eae       0x8c main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005eae                __vector_9
  .text.__vector_8
-                0x00005f10      0x1a6 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00005f10                __vector_8
+                0x00005f3a      0x1a6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00005f3a                __vector_8
  .text.__vector_45
-                0x000060b6      0x5b6 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000060b6                __vector_45
+                0x000060e0      0x5b6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x000060e0                __vector_45
  .text.__vector_30
-                0x0000666c        0x6 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000666c                __vector_30
+                0x00006696        0x6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00006696                __vector_30
  .text.__vector_46
-                0x00006672      0x2e4 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00006672                __vector_46
+                0x0000669c      0x2e4 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000669c                __vector_46
  .text.__vector_24
-                0x00006956       0x16 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00006956                __vector_24
+                0x00006980       0x16 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00006980                __vector_24
  .text.load_133V_battery_voltage
-                0x0000696c      0x33c main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000696c                load_133V_battery_voltage
+                0x00006996      0x33c main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00006996                load_133V_battery_voltage
  .text.load_a12V_voltage
-                0x00006ca8      0x33c main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00006ca8                load_a12V_voltage
+                0x00006cd2      0x33c main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x00006cd2                load_a12V_voltage
  .text.load_a5V_voltage
-                0x00006fe4      0x2fc main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x00006fe4                load_a5V_voltage
- .text.main     0x000072e0     0x4188 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x000072e0                main
+                0x0000700e      0x2fc main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000700e                load_a5V_voltage
+ .text.main     0x0000730a     0x4188 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000730a                main
  .text.get_133V_battery_voltage
-                0x0000b468      0x39e main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000b468                get_133V_battery_voltage
+                0x0000b492      0x39e main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000b492                get_133V_battery_voltage
  .text.get_a12V_voltage
-                0x0000b806      0x3a4 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000b806                get_a12V_voltage
+                0x0000b830      0x3a4 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000b830                get_a12V_voltage
  .text.get_a5V_voltage
-                0x0000bbaa      0x352 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000bbaa                get_a5V_voltage
+                0x0000bbd4      0x352 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000bbd4                get_a5V_voltage
  .text.get_temps
-                0x0000befc       0x60 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000befc                get_temps
+                0x0000bf26       0x60 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000bf26                get_temps
  .text.get_adc_ntc10k
-                0x0000bf5c      0x186 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000bf5c                get_adc_ntc10k
+                0x0000bf86      0x186 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000bf86                get_adc_ntc10k
  .text.scale_temp_ntc10k
-                0x0000c0e2      0x16e main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000c0e2                scale_temp_ntc10k
+                0x0000c10c      0x16e main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000c10c                scale_temp_ntc10k
  .text.scale_temps_array
-                0x0000c250       0x64 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000c250                scale_temps_array
+                0x0000c27a       0x64 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000c27a                scale_temps_array
  .text.load_tmparray_display
-                0x0000c2b4       0x76 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000c2b4                load_tmparray_display
+                0x0000c2de       0x76 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000c2de                load_tmparray_display
  .text.dsp_ps_temp
-                0x0000c32a      0x41e main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000c32a                dsp_ps_temp
+                0x0000c354      0x41e main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000c354                dsp_ps_temp
  .text.clr_tmp_dsp_area
-                0x0000c748      0x124 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                0x0000c748                clr_tmp_dsp_area
+                0x0000c772      0x124 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                0x0000c772                clr_tmp_dsp_area
  .text.avr-libc.fplib
-                0x0000c86c        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(addsf3.o)
-                0x0000c86c                __subsf3
-                0x0000c86e                __addsf3
+                0x0000c896        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(addsf3.o)
+                0x0000c896                __subsf3
+                0x0000c898                __addsf3
  .text.avr-libc.fplib
-                0x0000c87a       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(addsf3x.o)
-                0x0000c89c                __addsf3x
+                0x0000c8a4       0xcc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(addsf3x.o)
+                0x0000c8c6                __addsf3x
  .text.avr-libc.fplib
-                0x0000c946        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(cmpsf2.o)
-                0x0000c946                __nesf2
-                0x0000c946                __eqsf2
-                0x0000c946                __cmpsf2
-                0x0000c946                __ltsf2
-                0x0000c946                __lesf2
+                0x0000c970        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(cmpsf2.o)
+                0x0000c970                __nesf2
+                0x0000c970                __eqsf2
+                0x0000c970                __cmpsf2
+                0x0000c970                __ltsf2
+                0x0000c970                __lesf2
  .text.avr-libc.fplib
-                0x0000c950        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(divsf3.o)
-                0x0000c950                __divsf3
+                0x0000c97a        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(divsf3.o)
+                0x0000c97a                __divsf3
  .text.avr-libc.fplib
-                0x0000c958       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(divsf3x.o)
-                0x0000c978                __divsf3x
-                0x0000c97e                __divsf3_pse
+                0x0000c982       0xdc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(divsf3x.o)
+                0x0000c9a2                __divsf3x
+                0x0000c9a8                __divsf3_pse
  .text.avr-libc.fplib
-                0x0000ca34       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fixunssfsi.o)
-                0x0000ca34                __fixunssfsi
+                0x0000ca5e       0x5e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fixunssfsi.o)
+                0x0000ca5e                __fixunssfsi
  .text.avr-libc.fplib
-                0x0000ca92       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(floatsisf.o)
-                0x0000ca92                __floatunsisf
-                0x0000ca96                __floatsisf
+                0x0000cabc       0x7a c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(floatsisf.o)
+                0x0000cabc                __floatunsisf
+                0x0000cac0                __floatsisf
  .text.avr-libc.fplib
-                0x0000cb0c       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_cmp.o)
-                0x0000cb0c                __fp_cmp
+                0x0000cb36       0x48 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_cmp.o)
+                0x0000cb36                __fp_cmp
  .text.avr-libc.fplib
-                0x0000cb54        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_inf.o)
-                0x0000cb54                __fp_inf
+                0x0000cb7e        0xc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_inf.o)
+                0x0000cb7e                __fp_inf
  .text.avr-libc.fplib
-                0x0000cb60        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_nan.o)
-                0x0000cb60                __fp_nan
+                0x0000cb8a        0x6 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_nan.o)
+                0x0000cb8a                __fp_nan
  .text.avr-libc.fplib
-                0x0000cb66        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_pscA.o)
-                0x0000cb66                __fp_pscA
+                0x0000cb90        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_pscA.o)
+                0x0000cb90                __fp_pscA
  .text.avr-libc.fplib
-                0x0000cb74        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_pscB.o)
-                0x0000cb74                __fp_pscB
+                0x0000cb9e        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_pscB.o)
+                0x0000cb9e                __fp_pscB
  .text.avr-libc.fplib
-                0x0000cb82       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_round.o)
-                0x0000cb82                __fp_round
+                0x0000cbac       0x22 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_round.o)
+                0x0000cbac                __fp_round
  .text.avr-libc.fplib
-                0x0000cba4       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_split3.o)
-                0x0000cba4                __fp_split3
-                0x0000cbb4                __fp_splitA
+                0x0000cbce       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_split3.o)
+                0x0000cbce                __fp_split3
+                0x0000cbde                __fp_splitA
  .text.avr-libc.fplib
-                0x0000cbe8        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_zero.o)
-                0x0000cbe8                __fp_zero
-                0x0000cbea                __fp_szero
+                0x0000cc12        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(fp_zero.o)
+                0x0000cc12                __fp_zero
+                0x0000cc14                __fp_szero
  .text.avr-libc.fplib
-                0x0000cbf6        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(gesf2.o)
-                0x0000cbf6                __gesf2
-                0x0000cbf6                __gtsf2
+                0x0000cc20        0xa c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(gesf2.o)
+                0x0000cc20                __gesf2
+                0x0000cc20                __gtsf2
  .text.avr-libc.fplib
-                0x0000cc00        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(mulsf3.o)
-                0x0000cc00                __mulsf3
+                0x0000cc2a        0x8 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(mulsf3.o)
+                0x0000cc2a                __mulsf3
  .text.avr-libc.fplib
-                0x0000cc08       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(mulsf3x.o)
-                0x0000cc26                __mulsf3x
-                0x0000cc2c                __mulsf3_pse
+                0x0000cc32       0xd2 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libm.a(mulsf3x.o)
+                0x0000cc50                __mulsf3x
+                0x0000cc56                __mulsf3_pse
  .text.libgcc.mul
-                0x0000ccda       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_mulsi3.o)
-                0x0000ccda                __mulsi3
+                0x0000cd04       0x20 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_mulsi3.o)
+                0x0000cd04                __mulsi3
  .text.libgcc.div
-                0x0000ccfa       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_divmodhi4.o)
-                0x0000ccfa                _div
-                0x0000ccfa                __divmodhi4
+                0x0000cd24       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_divmodhi4.o)
+                0x0000cd24                _div
+                0x0000cd24                __divmodhi4
  .text.libgcc.div
-                0x0000cd22       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_udivmodsi4.o)
-                0x0000cd22                __udivmodsi4
+                0x0000cd4c       0x44 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_udivmodsi4.o)
+                0x0000cd4c                __udivmodsi4
  .text.libgcc.div
-                0x0000cd66       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_divmodsi4.o)
-                0x0000cd66                __divmodsi4
+                0x0000cd90       0x2e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_divmodsi4.o)
+                0x0000cd90                __divmodsi4
  .text.libgcc.div
-                0x0000cd94       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_negsi2.o)
-                0x0000cd94                __negsi2
+                0x0000cdbe       0x10 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_negsi2.o)
+                0x0000cdbe                __negsi2
  .text.libgcc.mul
-                0x0000cda4       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_umulhisi3.o)
-                0x0000cda4                __umulhisi3
+                0x0000cdce       0x1e c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_umulhisi3.o)
+                0x0000cdce                __umulhisi3
  .text.libgcc.mul
-                0x0000cdc2       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_muluhisi3.o)
-                0x0000cdc2                __muluhisi3
+                0x0000cdec       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_muluhisi3.o)
+                0x0000cdec                __muluhisi3
  .text.libgcc.div
-                0x0000cdd8       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_udivmodhi4.o)
-                0x0000cdd8                __udivmodhi4
+                0x0000ce02       0x28 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_udivmodhi4.o)
+                0x0000ce02                __udivmodhi4
  .text.avr-libc
-                0x0000ce00        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(memset.o)
-                0x0000ce00                memset
+                0x0000ce2a        0xe c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(memset.o)
+                0x0000ce2a                memset
  .text.avr-libc
-                0x0000ce0e       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strcmp.o)
-                0x0000ce0e                strcmp
+                0x0000ce38       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strcmp.o)
+                0x0000ce38                strcmp
  .text.avr-libc
-                0x0000ce20       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strlen.o)
-                0x0000ce20                strlen
+                0x0000ce4a       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strlen.o)
+                0x0000ce4a                strlen
  .text.avr-libc
-                0x0000ce32       0x52 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(sprintf.o)
-                0x0000ce32                sprintf
+                0x0000ce5c       0x52 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(sprintf.o)
+                0x0000ce5c                sprintf
  .text.avr-libc
-                0x0000ce84      0x408 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(vfprintf_std.o)
-                0x0000ce84                vfprintf
+                0x0000ceae      0x408 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(vfprintf_std.o)
+                0x0000ceae                vfprintf
  .text.avr-libc
-                0x0000d28c       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strnlen_P.o)
-                0x0000d28c                strnlen_P
+                0x0000d2b6       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strnlen_P.o)
+                0x0000d2b6                strnlen_P
  .text.avr-libc
-                0x0000d2a2       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strnlen.o)
-                0x0000d2a2                strnlen
+                0x0000d2cc       0x16 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(strnlen.o)
+                0x0000d2cc                strnlen
  .text.avr-libc
-                0x0000d2b8       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(fputc.o)
-                0x0000d2b8                fputc
+                0x0000d2e2       0x78 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(fputc.o)
+                0x0000d2e2                fputc
  .text.avr-libc
-                0x0000d330       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(ultoa_invert.o)
-                0x0000d330                __ultoa_invert
-                0x0000d3ec                . = ALIGN (0x2)
+                0x0000d35a       0xbc c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avrxmega4\libc.a(ultoa_invert.o)
+                0x0000d35a                __ultoa_invert
+                0x0000d416                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000d3ec        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
-                0x0000d3ec                _exit
-                0x0000d3ec                exit
+ .fini9         0x0000d416        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
+                0x0000d416                _exit
+                0x0000d416                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1089,11 +1090,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000d3ec        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
+ .fini0         0x0000d416        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avrxmega4\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000d3f0                _etext = .
+                0x0000d41a                _etext = .
 
-.data           0x00804000      0x2c8 load address 0x0000d3f0
+.data           0x00804000      0x2c8 load address 0x0000d41a
                 0x00804000                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1395,8 +1396,8 @@ END GROUP
                 0x0080435e                oled2_busy_flag
                 0x0080435f                oled3_NAK_flag
                 0x00804360                PROVIDE (__bss_end, .)
-                0x0000d3f0                __data_load_start = LOADADDR (.data)
-                0x0000d6b8                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000d41a                __data_load_start = LOADADDR (.data)
+                0x0000d6e2                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00804360        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -1481,33 +1482,33 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x8d25
+.debug_info     0x00000000     0x8d29
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x3357 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/AVR-Dx_DFP/1.10.114/gcc/dev/avr128db64/avrxmega4/crtavr128db64.o
  .debug_info    0x00003357       0x92 fclk_set_8mhz_asm.o
- .debug_info    0x000033e9     0x593c main_128_wSoCH_wTCoff_wRPGon_R3.o
+ .debug_info    0x000033e9     0x5940 main_128_wSoCH_wTCoff_wRPGon_R3.o
 
-.debug_abbrev   0x00000000     0x34fb
+.debug_abbrev   0x00000000     0x34ec
  *(.debug_abbrev)
  .debug_abbrev  0x00000000     0x30a0 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/AVR-Dx_DFP/1.10.114/gcc/dev/avr128db64/avrxmega4/crtavr128db64.o
  .debug_abbrev  0x000030a0       0x14 fclk_set_8mhz_asm.o
- .debug_abbrev  0x000030b4      0x447 main_128_wSoCH_wTCoff_wRPGon_R3.o
+ .debug_abbrev  0x000030b4      0x438 main_128_wSoCH_wTCoff_wRPGon_R3.o
 
-.debug_line     0x00000000     0x5671
+.debug_line     0x00000000     0x5673
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x21d C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/AVR-Dx_DFP/1.10.114/gcc/dev/avr128db64/avrxmega4/crtavr128db64.o
  .debug_line    0x0000021d       0x5e fclk_set_8mhz_asm.o
- .debug_line    0x0000027b     0x53f6 main_128_wSoCH_wTCoff_wRPGon_R3.o
+ .debug_line    0x0000027b     0x53f8 main_128_wSoCH_wTCoff_wRPGon_R3.o
 
 .debug_frame    0x00000000      0xd0c
  *(.debug_frame)
  .debug_frame   0x00000000      0xd0c main_128_wSoCH_wTCoff_wRPGon_R3.o
 
-.debug_str      0x00000000     0x3187
+.debug_str      0x00000000     0x3186
  *(.debug_str)
  .debug_str     0x00000000     0x169e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/AVR-Dx_DFP/1.10.114/gcc/dev/avr128db64/avrxmega4/crtavr128db64.o
- .debug_str     0x0000169e     0x1ae9 main_128_wSoCH_wTCoff_wRPGon_R3.o
-                               0x1bbd (size before relaxing)
+ .debug_str     0x0000169e     0x1ae8 main_128_wSoCH_wTCoff_wRPGon_R3.o
+                               0x1bbc (size before relaxing)
 
 .debug_loc      0x00000000     0x1b70
  *(.debug_loc)
@@ -1531,9 +1532,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000      0x338
+.debug_ranges   0x00000000      0x320
  *(.debug_ranges)
- .debug_ranges  0x00000000      0x338 main_128_wSoCH_wTCoff_wRPGon_R3.o
+ .debug_ranges  0x00000000      0x320 main_128_wSoCH_wTCoff_wRPGon_R3.o
 
 .debug_macro
  *(.debug_macro)
